@@ -1,24 +1,13 @@
 import argparse
-import json
-import math
 import os
 import pickle as pk
-import random
-import re
 
 import numpy as np
-import scipy.stats
-from scipy import linalg
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
-from sklearn.mixture._gaussian_mixture import _estimate_gaussian_parameters
-from sklearn.preprocessing import normalize
-from tqdm import tqdm
 
-from utils import (INTERMEDIATE_DATA_FOLDER_PATH, cosine_similarity_embedding,
-                   cosine_similarity_embeddings, evaluate_predictions,
-                   most_common, pairwise_distances)
+from utils import (INTERMEDIATE_DATA_FOLDER_PATH, cosine_similarity_embeddings)
 
 
 def main(dataset_name,

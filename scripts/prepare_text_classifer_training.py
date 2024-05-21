@@ -1,16 +1,11 @@
 import argparse
-import itertools
-import json
-import operator
 import os
 import pickle
 from shutil import copyfile
 
-import numpy as np
-
 from preprocessing_utils import load_clean_text
 from utils import (DATA_FOLDER_PATH, INTERMEDIATE_DATA_FOLDER_PATH,
-                   evaluate_predictions, most_common)
+                   evaluate_predictions)
 
 
 def write_to_dir(text, labels, dataset_name, suffix_name):

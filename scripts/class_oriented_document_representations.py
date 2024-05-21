@@ -201,7 +201,7 @@ def main(args):
     model_class, tokenizer_class, pretrained_weights = MODELS[args.lm_type]
     model = model_class.from_pretrained(pretrained_weights, output_hidden_states=True)
     model.eval()
-    model.cuda()
+    # model.cuda()
     document_representations = []
     for i, _tokenization_info in tqdm(enumerate(tokenization_info), total=len(tokenization_info)):
         document_representation = weight_sentence(model,

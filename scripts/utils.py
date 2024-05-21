@@ -1,12 +1,6 @@
-import itertools
-import operator
 import os
 
 import numpy as np
-
-linewidth = 200
-np.set_printoptions(linewidth=linewidth)
-np.set_printoptions(precision=3, suppress=True)
 
 from collections import Counter
 
@@ -14,10 +8,15 @@ from scipy.spatial.distance import cdist
 from sklearn.metrics import confusion_matrix, f1_score
 from transformers import BertModel, BertTokenizer
 
+line_width = 200
+np.set_printoptions(linewidth=line_width)
+np.set_printoptions(precision=3, suppress=True)
+
 MODELS = {
     'bbc': (BertModel, BertTokenizer, 'bert-base-cased'),
     'bbu': (BertModel, BertTokenizer, 'bert-base-uncased')
 }
+
 
 # all paths can be either absolute or relative to this utils file
 DATA_FOLDER_PATH = os.path.join('..', 'data', 'datasets')
